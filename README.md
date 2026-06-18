@@ -23,7 +23,7 @@ API REST em Node.js + Express + MongoDB + Mongoose, com autenticação JWT, vali
 ## Pré-requisitos
 
 - Node.js 18+
-- MongoDB em execução localmente (ou uma URI válida em `MONGODB_URI`)
+- MongoDB
 
 ## Instalação
 
@@ -51,12 +51,18 @@ http://localhost:3000/api-docs/
 
 ## Variáveis de ambiente
 
-Você pode configurar estas variáveis antes de iniciar a API:
+Você pode configurar estas variáveis antes de iniciar a API criando um arquivo `.env` na raiz do projeto:
 
-```bash
-MONGODB_URI="mongodb://127.0.0.1:27017/alunosdb"
+```env
+MONGODB_URI="mongodb+srv://<usuario>:<senha>@<cluster>/<database>?retryWrites=true&w=majority"
 JWT_SECRET="segredo-dev"
 JWT_EXPIRES_IN="1h"
+```
+
+Exemplo com MongoDB Atlas:
+
+```env
+MONGODB_URI="mongodb+srv://meuUsuario:minhaSenha@cluster0.xxxxx.mongodb.net/alunosdb?retryWrites=true&w=majority"
 ```
 
 ## Exemplo de autenticação
